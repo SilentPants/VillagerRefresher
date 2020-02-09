@@ -1,0 +1,52 @@
+main: com.spire.VillagerRefresh.Main
+name: GossipControl
+version: 1.15
+description: Spawn a new villager, or refresh one.
+api-version: 1.15
+author: Boney001
+
+commands:
+  villagerrefresh:
+    description: Simple Villager managemnet
+    aliases:
+    - vr
+    usage: /<command> [ create | delete | help | refresh ]
+    permission: villagerrefresh.base
+  villagerrefresh create:
+    description: Creates a villager where the player is looking.
+    permission: villagerrefresh.create
+  villagerrefresh delete:
+    description: Kills the villager a player is looking at.
+    permission: villagerrefresh.delete
+  villagerrefresh help:
+    description: Gives helpful information about the plugin commands.
+    usage: /villagerrefresh help [create|delete|help|refresh]
+    permission: villagerrefresh.help
+  villagerrefresh refresh:
+    description: Kills and replaces the villager a player is looking at.
+    permission: villagerrefresh.refresh
+permissions:
+  villagerrefresh.*:
+    description: All VillagerRefresh Perms
+    default: op
+    children:
+      villagerrefresh.base: true
+      villagerrefresh.create: true
+      villagerrefresh.delete: true
+      villagerrefresh.help: true
+      villagerrefresh.refresh: true
+  villagerrefresh.base:
+    description: Allows use of base command
+    default: op
+  villagerrefresh.create:
+    description: Allows use of the create command
+    default: op
+  villagerrefresh.delete:
+    description: Allows use of the delete command
+    default: op
+  villagerrefresh.help:
+    description: Allows use of the help command
+    default: op
+  villagerrefresh.refresh:
+    description: Allows use of the refresh command
+    default: op
